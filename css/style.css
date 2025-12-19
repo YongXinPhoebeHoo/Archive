@@ -274,6 +274,19 @@ ul.list {
     margin: 0;
 }
 
+.social-icons {
+    display: flex;
+    flex-direction: row;   /* horizontal */
+    gap: 16px;             /* space between icons */
+    align-items: center;
+    color:#d9b16d;
+}
+
+.social-icons p {
+    color: #d9b16d;
+    font-size: clamp(0px, 0vw, 0px);
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - */
 }
 /* - - - - - - - - - - - - - - - - - - - - - */
