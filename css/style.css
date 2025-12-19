@@ -33,7 +33,7 @@
 
 body {
     min-height: 100vh;
-    margin: 0;
+    margin: 5;
 
     background: linear-gradient(
         to bottom,
@@ -195,6 +195,31 @@ ul.list {
     margin: 0;
 }
 
+.carousel-container {
+  width: 100%;
+  max-width: 100%;   /* adjust as needed */
+  height: 550px;      /* match image height */
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;     /* center carousel */
+  border: 0px solid #d9b16d;
+}
+
+.carousel-track {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.carousel-item {
+  width: 180px;
+  height: auto;
+  margin-right: 10px; /* spacing between images */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
 /* - - - Mobile - - - - - - - - - - - - - - */
 @media screen and (max-width: 480px) {
 /* - - - - - - - - - - - - - - - - - - - - - */
@@ -268,13 +293,13 @@ p {
 .column-right {
     width: 100%;              /* right column takes full width */
     flex-direction: column;   /* stack lists and self description */
-    gap: 15px;
+    gap: 5px;
     box-sizing: border-box;
 }
 
 .lists-container {
     flex-direction: column;   /* stack lists vertically */
-    gap: 15px;                /* spacing between lists */
+    gap: 0px;                /* spacing between lists */
     width: 100%;              /* take full width */
 }
 
@@ -298,15 +323,17 @@ ul.list {
 
 .social-icons {
     display: flex;
-    flex-direction: row;   /* horizontal */
-    gap: 16px;             /* space between icons */
-    align-items: center;
-    color:#d9b16d;
+    flex-direction: row; /* horizontal layout */
+    gap: 10px;            /* space between icons */
+    justify-content: flex-end; /* align items to the right */
+    align-items: center; /* vertical alignment of icons/text */
+    color: #d9b16d;
 }
 
 .social-icons p {
     color: #d9b16d;
-    font-size: clamp(0px, 0vw, 0px);
+    font-size: clamp(0px, 0vw, 0px); /* your current setting */
+    margin: 0; /* remove default margin */
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - */
