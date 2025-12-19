@@ -1,12 +1,34 @@
+/* Particle container fills the screen */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* allows clicks through particles */
+    overflow: hidden;
+    z-index: 9999; /* behind page content */
+}
+
+/* Style for each particle */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+
 :root {
     /* Gradient colours */
     --top-color: #4a3a3b;
     --bottom-color: #181316;
 
     /* Gradient control */
-    --top-stop: 70%;        /* where top colour ends */
-    --bottom-stop: 5%;     /* where bottom colour starts */
-    --blend-size: 70%;      /* overlap / softness of blend */
+    --top-stop: 0%;        /* where top colour ends */
+    --bottom-stop: 50%;     /* where bottom colour starts */
+    --blend-size: 40%;      /* overlap / softness of blend */
 }
 
 body {
@@ -178,12 +200,12 @@ ul.list {
 /* - - - - - - - - - - - - - - - - - - - - - */
 
 p {
-    font-size: 20px;
+    font-size: 13px;
     margin: 0px;
 }
 
 .page-content {
-    margin: 40px 40px;
+    margin: 30px 30px;
 }
 
 .frame {
@@ -225,7 +247,7 @@ p {
     flex-direction: column;   /* stack left + right columns */
     align-items: center;      /* center content */
     padding: 2vw;             /* keep some padding */
-    gap: 20px;                /* reduce gap for mobile */
+    gap: 0px;                /* reduce gap for mobile */
     overflow-x: hidden;       /* prevent horizontal scroll */
     width: 100%;              /* ensure container fits screen */
     box-sizing: border-box;   /* include padding in width */
@@ -238,7 +260,7 @@ p {
 }
 
 .profile-img {
-    width: 40vw;              /* scale image relative to viewport width */
+    width: 30vw;              /* scale image relative to viewport width */
     max-width: 250px;         /* optional max width */
     height: auto;
 }
@@ -257,14 +279,14 @@ p {
 }
 
 .list {
-    font-size: 20px;          /* scale text smaller for mobile */
+    font-size: 15px;          /* scale text smaller for mobile */
     flex: none;               /* prevent flex stretching that causes overflow */
     width: 100%;              /* ensure lists fit container */
     box-sizing: border-box;
 }
 
 .self-description {
-    font-size: 20px;          /* smaller text for mobile */
+    font-size: 15px;          /* smaller text for mobile */
     width: 100%;
     box-sizing: border-box;
 }
