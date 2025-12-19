@@ -1,0 +1,75 @@
+:root {
+    /* Gradient colours */
+    --top-color: #4a3a3b;
+    --bottom-color: #181316;
+
+    /* Gradient control */
+    --top-stop: 70%;        /* where top colour ends */
+    --bottom-stop: 5%;     /* where bottom colour starts */
+    --blend-size: 70%;      /* overlap / softness of blend */
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    background: linear-gradient(
+        to bottom,
+        var(--top-color) 0%,
+        var(--top-color) calc(var(--top-stop) - var(--blend-size)),
+        var(--bottom-color) calc(var(--bottom-stop) + var(--blend-size)),
+        var(--bottom-color) 100%
+    );
+
+    color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+.page-content {
+    margin: 5vw 10vh;
+}
+
+.frame {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+
+    /* transform controls */
+    --scale: 1;
+    --flip-x: 1;
+    --flip-y: 1;
+
+    transform: scale(
+        calc(var(--scale) * var(--flip-x)),
+        calc(var(--scale) * var(--flip-y))
+    );
+}
+
+
+/* Top-left frame */
+.frame-top-left {
+    top: 0;
+    left: 0;
+}
+
+/* Bottom-right frame*/
+.frame-bottom-right {
+    bottom: 0;
+    right: 0;
+
+    --flip-x: -1;   /* use -1 to flip horizontally */
+    --flip-y: -1;  /* use -1 to flip vertically */
+
+    transform: scale(var(--flip-x), var(--flip-y));
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        margin: 5vw 5vh;
+    }
+
+    .frame {
+        --scale: 1;
+    }
+}
+
