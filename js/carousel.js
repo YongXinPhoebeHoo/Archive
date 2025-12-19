@@ -1,16 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById("carousel-track");
     const items = Array.from(track.querySelectorAll(".carousel-item"));
-    const scrollSpeed = 0.5;       // pixels per frame
-    const fadeDuration = 2000;    // in ms, how long fade in/out takes
-    const fadeMargin = 220;       // in px, how far from edge to start fading
 
-    // Set initial positions
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    let scrollSpeed = 0.5;
+    let fadeDuration = 1000;
+    let fadeMargin = 200;
+
+    if (isMobile) {
+        scrollSpeed = 0.25;
+        fadeDuration = 1200;
+        fadeMargin = 0;
+    }
+
     items.forEach((item, index) => {
         item.style.position = "absolute";
-        item.style.left = (index * (item.offsetWidth + 10)) + "px";
-        item.style.transition = `opacity ${fadeDuration}ms ease`; // use fadeDuration
+        item.style.left = index * (item.offsetWidth + 20) + "px";
+        item.style.transition = `opacity ${fadeDuration}ms ease`;
     });
+
 
     function animateCarousel() {
         const containerWidth = track.parentElement.offsetWidth;
